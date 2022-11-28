@@ -1,0 +1,70 @@
+금일 해볼 것
+
+exam 11번 풀이
+
+연계해서 학습한 책 내용 복기
+하고싶은거 좀 해보기
+
+/**
+ * * txt 파일 읽어오기 작업
+ * * HTML로 가공해야 함
+ */
+
+const http = require('http')
+const fs = require('fs')
+const url = require('url')
+const path = require('path')
+//! 1차 진행
+//const server = http.createServer((req, res) => {
+//  const alphaURL = url.parse(req.url);
+//  const resource = alphaURL.pathname
+//
+//  if(resource == '/'){
+//    fs.readFile()
+//  }
+//})
+//! txt파일 을 그냥 한거 불러와 본것
+//fs.readFile('header.txt', 'utf8', (err, data) => {
+//  if(err) {
+//    console.log("error")
+//    return
+//  }
+//  console.log(data)
+//})
+//
+//fs.readFile('main.txt', 'utf8', (err, data) => {
+//  if(err) {
+//    console.log("error")
+//    return
+//  }
+//  console.log(data)
+//})
+//
+//fs.readFile('footer.txt', 'utf8', (err, data) => {
+//  if(err) {
+//    console.log("error")
+//    return
+//  }
+//  console.log(data)
+//})
+//! 2차 작업
+const server = http.createServer((request, response) => {
+  const html = fs.readFileSync('head.txt', (err) => {
+    if(err) throw err
+  })
+  if(request.method === 'GET'){
+    response.statusCode = 200;
+    response.writeHead('content-type', 'text/html')
+  } else if(request.method === "POST"){
+    let body  = "";
+    request.on('data', (data) => {
+      body += data
+      data = data.toString('utf8')
+      console.log(data, './head.txt')
+    })
+  }
+})
+
+server.listen(5959, () => {
+  console.log(`server start! https://localhost/5959`)
+})
