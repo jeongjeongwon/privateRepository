@@ -77,15 +77,15 @@ const database = fs.readFileSync('database.json', (err) => {
   if(err) throw err
 })
 
-fs.writeFileSync('body.txt', (database), (err) => {
+fs.appendFileSync('body.txt', (header), (err) => {
   if(err) throw err
 })
-//fs.writeFileSync('body.txt', (main), (err) => {
-//  if(err) throw err
-//})
-//fs.appendFileSync('body.txt', (footer), (err) => {
-//  if(err) throw err
-//})
+fs.appendFileSync('body.txt', (main), (err) => {
+  if(err) throw err
+})
+fs.appendFileSync('body.txt', (footer), (err) => {
+  if(err) throw err
+})
 
 const server = http.createServer((req, res) => {
   if(req.method === 'GET'){
