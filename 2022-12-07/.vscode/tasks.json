@@ -1,0 +1,25 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0", //? 명령어
+  "command": "chrome", //? 명령어 명칭
+  "windows":{ // ? 실행할 브라우저 주소
+    "command": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe"
+  },
+  "args": [
+    "localhost\\${workspaceRootFolderName}\\${fileBasename}"
+  ],
+  "tasks": [
+    {
+      "label": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe",
+      "args": [
+        "localhost\\${workspaceRootFolderName}\\${fileBasename}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "_id": "build",
+        "isDefault": false
+      }
+    }
+  ]
+}
