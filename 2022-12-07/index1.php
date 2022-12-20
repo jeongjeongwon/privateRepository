@@ -31,9 +31,9 @@
     echo $Rust->get_type()."<br>";
     echo $frostFunk->get_name()."<br>";
     echo $frostFunk->get_type()."<br>";
+
+    //가져오기 선언 오류 발생 해결 get_name에 오류구문 발견 후 수정 return으로 set_name에서 받은 자료 출력 전 구문 => $this->name = $name
+    // name 출력후 type도 시도 같은 방법으로 진행
     ?>
   </body>
 </html>
-
-//가져오기 선언 오류 발생 해결 get_name에 오류구문 발견 후 수정 return으로 set_name에서 받은 자료 출력 전 구문 => $this->name = $name
-// name 출력후 type도 시도 같은 방법으로 진행
