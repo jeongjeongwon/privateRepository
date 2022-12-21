@@ -19,6 +19,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-app": "^1.1.2",
+    "steam-market-parser": "^1.0.7",
     "typescript": "^4.9.3"
   }
 }
