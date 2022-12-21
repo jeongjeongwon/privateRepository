@@ -11,23 +11,21 @@
 // server.listen(3939, ()=>{
 //   console.log(`http://localhost/3939`)
 // })
+//! 구분선
+// const test = new URL('https://api.steampowered.com/ISteamApps/GetAppList/v2/');
+// const urlParams = test.searchParams
 
-const test = new URL('https://api.steampowered.com/ISteamApps/GetAppList/v2/');
-const urlParams = test.searchParams
+// console.log(urlParams)
 
-console.log(urlParams)
+// const first = urlParams.get('appid')
+// console.log(first)
 
-const first = urlParams.get('itemName')
-console.log(first)
+// const second = urlParams.getAll('appid')
+// console.log(second)
 
-const second = urlParams.getAll('itemName')
-console.log(second)
+//!구분선
+const http = require('http')
+const fs = require('fs')
 
-const Key = urlParams.keys()
-console.log(Key)
-
-const values = urlParams.values()
-console.log(values)
-
-const entry = urlParams.entries();
-console.log(entry)
+STEAM_URL = 'https://api.steampowered.com/ISteamApps/GetAppList/v2/'
+STEAM_KEY = 'FFE4921495FB8D549AD64EB2D18F91FD'
